@@ -1,0 +1,37 @@
+# update packages
+sudo apt-get update && sudo apt-get upgrade
+
+## Install Docker
+# uninstall old versions
+sudo apt-get remove docker docker-engine docker.io containerd runc
+
+# install dependencies
+sudo apt-get install ca-certificates curl gnupg lsb-release
+
+# gpg key
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+# add repo
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get update
+
+# install docker pacakages
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+# confirm successfull install
+sudo docker run --name hello-world hello-world
+
+# if successful, remove hello-world container
+sudo docker rm hello-world
+
+# yay, Docker is installed!
+# next, install Home Assistant Container)
+# first, make new directory for the install, then change directory to it
+sudo mkdir /opt/homeassistant && cd /opt/homeassistant
+
+# clone docker-compose.yml
+
+
+
