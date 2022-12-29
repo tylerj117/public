@@ -85,3 +85,4 @@ sudo docker compose up -d
 
 # to connect to zwave-js-ui in HomeAssistant:
 # https://zwave-js.github.io/zwave-js-ui/#/homeassistant/homeassistant-official?id=z-wave-integration
+# https://www.home-assistant.io/integrations/zwave_js
