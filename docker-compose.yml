@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    volumes:
+      - /opt/homeassistant/config:/config
+      - /etc/localtime:/etc/localtime:ro
+      # - /run/dbus:/run/dbus:ro
+    devices:
+      # - '/dev/serial/by-id/usb-Silicon_Labs_HubZ_Smart_Home_Controller_C13013F1-if01-port0:/dev/zigbee'
+    restart: unless-stopped
+    # priviliged: true
+    network_mode: host
+    # ports:
+      # - "8123:8123"
+
+volumes:
+  homeassistant:
