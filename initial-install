@@ -71,4 +71,14 @@ ls /dev/serial/by-id
 # verify stick reference in docker-compose.yml
 sudo nano docker-compose.yml
 
-# 
+# under devices, verify this matches the reference you just pasted. After 'port0' you should see ':/dev/zwave'
+# it should look like this, unless the stick reference is different:
+# /dev/serial/by-id/usb-Silicon_Labs_HubZ_Smart_Home_Controller_C13013F1-if00-port0:/dev/zwave
+# Ctrl & S to save, Ctrl & X to exit
+
+# start zwave docker container
+sudo docker compose up -d
+
+# navigate to http:[IP]:8091
+# update minimum settings using this reference:
+# https://zwave-js.github.io/zwave-js-ui/#/getting-started/quick-start?id=minimum-settingshttps://zwave-js.github.io/zwave-js-ui/#/getting-started/quick-start?id=minimum-settings
